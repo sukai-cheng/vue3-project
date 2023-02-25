@@ -2,9 +2,7 @@
   <div class="dropdown">
     <a href="#" class="btn btn-outline-light my-2 dropdown-toggle" @click.prevent = "toggleOpen">{{title}}</a>
     <ul class="dropdown-menu" :style="{display: 'block'}" v-if="isOpen">
-      <li><a class="dropdown-item" href="#">Action</a></li>
-      <li><a class="dropdown-item" href="#">Another action</a></li>
-      <li><a class="dropdown-item" href="#">Something else here</a></li>
+      <slot></slot>
     </ul>
   </div>
 </template>
@@ -35,6 +33,6 @@ export default defineComponent({
 )
 </script>
 
-<style scoped>
+<style>
 
 </style>
