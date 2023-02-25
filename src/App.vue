@@ -20,8 +20,8 @@ const testData: ColumnProps[] = [
   {
     id: 2,
     title: 'test2的专栏',
-    description: '这是test2的专栏，有一段非常有意思的简介，可以更新一下欧',
-    avatar: 'https://chengsukai.oss-cn-hangzhou.aliyuncs.com/2022-10-11/26466404-eacd-4741-8353-93b38586c905_e3284f319e256a5d.jpg'
+    description: '这是test2的专栏，有一段非常有意思的简介，可以更新一下欧'
+    // avatar: ''
   },
   {
     id: 3,
