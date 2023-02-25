@@ -26,7 +26,9 @@ export default defineComponent({
     }
     const handler = (e: MouseEvent) => {
       if (dropdownRef.value) {
-        console.log(dropdownRef.value)
+        if (!dropdownRef.value.contains(e.target as HTMLElement) && isOpen.value) {
+          isOpen.value = false
+        }
       }
     }
 
