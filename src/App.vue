@@ -5,8 +5,18 @@
 
     <form>
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Email address</label>
-        <validate-input :rules="emailRules"></validate-input>
+        <div>
+          <label for="form-label">邮箱地址</label>
+          <validate-input :rules="emailRules"></validate-input>
+        </div>
+        <div>
+          <label for="exampleInputEmail1" class="form-label">邮箱地址</label>
+          <validate-input :rules="emailRules"></validate-input>
+        </div>
+        <div>
+          <label for="exampleInputPassword1" class="form-label">密码</label>
+          <validate-input :rules="emailRules"></validate-input>
+        </div>
       </div>
     </form>
 
