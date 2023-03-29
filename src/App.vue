@@ -7,16 +7,21 @@
       <div class="mb-3">
         <div>
           <label for="form-label">邮箱地址</label>
-          <validate-input :rules="emailRules" v-model="emailVal"></validate-input>
-          {{emailVal}}
+          <validate-input
+            :rules="emailRules"
+            v-model="emailVal"
+            placeholder="请输入邮箱地址"
+            type="text"
+          >
+          </validate-input>
         </div>
         <div>
-          <label for="exampleInputEmail1" class="form-label">邮箱地址</label>
-          <validate-input :rules="emailRules"></validate-input>
-        </div>
-        <div>
-          <label for="exampleInputPassword1" class="form-label">密码</label>
-          <validate-input :rules="emailRules"></validate-input>
+          <label for="InputPassword" class="form-label">密码</label>
+          <validate-input
+            :rules="emailRules"
+            type="password"
+            placeholder="请输入密码">
+          </validate-input>
         </div>
       </div>
     </form>
@@ -76,7 +81,7 @@ export default defineComponent({
     ValidateInput
   },
   setup () {
-    const emailVal = ref('viking')
+    const emailVal = ref('')
     const emailRules: RulesProp = [
       { type: 'required', message: '电子邮箱地址不能为空' },
       { type: 'email', message: '请输入正确的电子邮箱格式' }
