@@ -3,7 +3,7 @@
     <global-header :user="currentUser"></global-header>
     <column-list :list="list"></column-list>
 
-    <form>
+    <validate-form @form-submit="onFormSubmit">
       <div class="mb-3">
         <div>
           <label for="form-label">邮箱地址</label>
@@ -24,7 +24,10 @@
           </validate-input>
         </div>
       </div>
-    </form>
+      <template v-slot:submit>
+          <span class="btn btn-danger">Submit</span>
+      </template>
+    </validate-form>
 
   </div>
 </template>
@@ -34,6 +37,7 @@ import { defineComponent, ref } from 'vue'
 import ColumnList, { ColumnProps } from '@/components/ColumnList.vue'
 import GlobalHeader, { UserProps } from '@/components/GlobalHeader.vue'
 import ValidateInput, { RulesProp } from '@/components/ValidateInput.vue'
+import ValidateForm from '@/components/ValidateForm.vue'
 import 'bootstrap/dist/css/bootstrap.min.css'
 // mock数据
 const currentUser: UserProps = {
@@ -78,7 +82,8 @@ export default defineComponent({
   components: {
     ColumnList,
     GlobalHeader,
-    ValidateInput
+    ValidateInput,
+    ValidateForm
   },
   setup () {
     const emailVal = ref('')
@@ -86,11 +91,19 @@ export default defineComponent({
       { type: 'required', message: '电子邮箱地址不能为空' },
       { type: 'email', message: '请输入正确的电子邮箱格式' }
     ]
+    const passwordVal = ref('')
+    const passwordRules: RulesProp = [
+      { type: 'required', message: '密码不正确' }
+    ]
+    const onFormSubmit = (result: boolean) => {
+      console.log('1234', result)
+    }
     return {
       list: testData,
       currentUser: currentUser,
       emailRules,
-      emailVal
+      emailVal,
+      onFormSubmit
     }
   }
 
