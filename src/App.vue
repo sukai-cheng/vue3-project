@@ -98,7 +98,7 @@ export default defineComponent({
       { type: 'required', message: '密码不正确' }
     ]
     const onFormSubmit = (result: boolean) => {
-      console.log(inputRef.value)
+      console.log('result: ' + inputRef.value.validateInput())
       console.log('1234', result)
     }
     return {
