@@ -19,8 +19,9 @@
         <div>
           <label for="InputPassword" class="form-label">密码</label>
           <validate-input
-            :rules="emailRules"
+            :rules="passwordRules"
             type="password"
+            v-model="passwordVal"
             placeholder="请输入密码">
           </validate-input>
         </div>
@@ -80,6 +81,7 @@ const testData: ColumnProps[] = [
 
 export default defineComponent({
   name: 'App',
+  // 将组件放在这里
   components: {
     ColumnList,
     GlobalHeader,
@@ -88,12 +90,12 @@ export default defineComponent({
   },
   setup () {
     const inputRef = ref<any>()
-    const emailVal = ref('')
+    const emailVal = ref('123@test.com')
     const emailRules: RulesProp = [
       { type: 'required', message: '电子邮箱地址不能为空' },
       { type: 'email', message: '请输入正确的电子邮箱格式' }
     ]
-    const passwordVal = ref('')
+    const passwordVal = ref('123')
     const passwordRules: RulesProp = [
       { type: 'required', message: '密码不正确' }
     ]
@@ -107,7 +109,9 @@ export default defineComponent({
       emailRules,
       emailVal,
       onFormSubmit,
-      inputRef
+      inputRef,
+      passwordVal,
+      passwordRules
     }
   }
 

@@ -11,8 +11,8 @@ export default defineComponent({
   name: 'DropdownItem',
   props: {
     disabled: {
-      type: Boolean,
-      default: false
+      type: Boolean, // 类型
+      default: false // 默认值
     }
   }
 }

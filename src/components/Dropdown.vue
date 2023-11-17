@@ -12,7 +12,10 @@ import { defineComponent, ref, watch } from 'vue'
 import useClickOutside from '@/hooks/useClickOutside'
 
 export default defineComponent({
+
+  // 组件名称
   name: 'Dropdown',
+  // 属性
   props: {
     title: {
       type: String,
@@ -21,6 +24,7 @@ export default defineComponent({
   },
   setup () {
     const isOpen = ref(false)
+    // 初始类型的联合类型
     const dropdownRef = ref<null | HTMLElement>(null)
     const toggleOpen = () => {
       isOpen.value = !isOpen.value
