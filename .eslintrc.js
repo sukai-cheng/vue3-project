@@ -4,6 +4,7 @@ module.exports = {
     node: true
   },
   extends: [
+    // 添加的规则检查vue代码
     'plugin:vue/vue3-essential',
     '@vue/standard',
     '@vue/typescript/recommended'
